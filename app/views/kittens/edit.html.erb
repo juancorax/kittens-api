@@ -1,0 +1,11 @@
+<%= link_to "Home", root_path %>
+
+<br>
+
+<h1>Edit kitten</h1>
+
+<%= render "shared/kitten_form", kitten: @kitten %>
+
+<br>
+
+<%= link_to "Delete Kitten", kitten_path(@kitten), data: { turbo_method: "delete" } %>

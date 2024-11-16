@@ -1,0 +1,11 @@
+<%= link_to "Home", root_path %>
+
+<br><br>
+
+<%= render "shared/kitten", kitten: @kitten %>
+
+<br><br>
+
+<%= link_to "Edit Kitten", edit_kitten_path(@kitten) %>
+<br>
+<%= link_to "Delete Kitten", kitten_path(@kitten), data: { turbo_method: "delete" } %>

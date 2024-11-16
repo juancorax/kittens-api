@@ -1,0 +1,51 @@
+<% if kitten.errors.any? %>
+  <% flash.now[:error] = "Fix your kitten!" %>
+<% end %>
+
+<%= form_with model: kitten do |form| %>
+  <%= form.label :name, "Name:" %>
+  <%= form.text_field :name %>
+
+  <% if kitten.errors[:name].any? %>
+    <% kitten.errors[:name].each do |error_message| %>
+      <%= error_message %><br>
+    <% end %>
+  <% end %>
+
+  <br>
+
+  <%= form.label :age, "Age:" %>
+  <%= form.select :age, 1..20 %>
+
+  <% if kitten.errors[:age].any? %>
+    <% kitten.errors[:age].each do |error_message| %>
+      <%= error_message %><br>
+    <% end %>
+  <% end %>
+
+  <br>
+
+  <%= form.label :cuteness, "Cuteness:" %>
+  <%= form.select :cuteness, 1..10 %>
+
+  <% if kitten.errors[:cuteness].any? %>
+    <% kitten.errors[:cuteness].each do |error_message| %>
+      <%= error_message %><br>
+    <% end %>
+  <% end %>
+
+  <br>
+
+  <%= form.label :softness, "Softness:" %>
+  <%= form.select :softness, 1..10 %>
+
+  <% if kitten.errors[:softness].any? %>
+    <% kitten.errors[:softness].each do |error_message| %>
+      <%= error_message %><br>
+    <% end %>
+  <% end %>
+
+  <br>
+
+  <%= form.submit %>
+<% end %>
